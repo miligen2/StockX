@@ -1,6 +1,40 @@
 header{
-    width: 20vw;
+    position: fixed;
+    width: 300px;
+
     background: red;
+    height: 100vh;
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+#img{
+    width: 30%;
+    padding-top: 20px;
+}
+.test{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+}
+.itemList{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.itemList>img{
+    width: 35px;
+    margin-right: 10px;
+}
+
+
+nav{
+    height: 100vh;
 }
 body  {
     margin: 0;

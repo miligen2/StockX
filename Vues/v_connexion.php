@@ -1,11 +1,4 @@
-
-
 <div class="full">
-<?php 
-require 'API/database.php';
-?> 
-
-
     <div class="cContainer">
         <form action="Controleur/connexion.php" method="post">
             <div class="form-field">
