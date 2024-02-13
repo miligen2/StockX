@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+/* #8bba61 */ /* 10% */
+--olivine-50: rgb(243, 248, 237);
+--olivine-100: rgb(228, 240, 215);
+--olivine-200: rgb(203,226,180);
+--olivine-300: rgb(170,207,135);
+--olivine-400: rgb(139 186 97);
+--olivine-500: rgb(109 159 67);
+--olivine-600: rgb(84 126 50);
+--olivine-700: rgb(65 97 42);
+--olivine-800: rgb(55 78 38);
+--olivine-900: rgb(48 67 36);
+--olivine-950: rgb(23 36 15);
+
+--font-family: "Inter", sans-serif;
+
+/*  */ /* 30% */
+
+/*  *//* 10% */
+}
+
+p{ 
+    font-family: var(--font-family);
+    font-size: larger;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+
+}
+
+
+.bginfo{
+    background-color: var(--olivine-50);
+    border: var(--olivine-400) solid 1px;
+}
+.btn {
+    background-color: var(--olivine-500);
+    padding: 10px 10px;
+    color: white ;
+    border: 0px;
+    border-radius: 3px;
+
+}
+.btn:hover{
+    background-color: var(--olivine-600);
+}
+.btn:active{
+    background-color: var(--olivine-700);
+}
+.btn:disabled{
+    background-color: var(--olivine-200);
+    color: var(--olivine-700);
+}
+
