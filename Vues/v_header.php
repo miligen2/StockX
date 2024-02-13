@@ -1,9 +1,20 @@
+<?php
+
+
+if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
+    $messageBienvenue = "<span>Bonjour, " . $_SESSION["prenom"] . " " . $_SESSION["nom"] . "</span>";
+} else {
+    $messageBienvenue = "<span>Bienvenue</span>"; 
+}
+?>
+
+
 <header>
         <nav>
             <div class="img">
                 <img src="../images/Logo/LogoStockX.png" alt="Logo StockX" srcset=""id="img">
                 <H1>STOXK X</H1>
-                <span>Bonjour, </span>
+            <?php    echo $messageBienvenue ?>
             </div>
             
             <div class="test">

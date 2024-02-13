@@ -1,4 +1,6 @@
 <?php
+session_start(); // Démarrer la session
+
 include '../API/database.php';
 global $db;
 
@@ -16,9 +18,9 @@ try {
             if ($password == $result['mot_de_passe']) {
                 $_SESSION['user-id'] = $result["id_utilisateur"];
                 $_SESSION['user_email'] = $result['email'];
-                $_SESSION['nom'] = $result['prenom'];
+                $_SESSION['nom'] = $result['nom'];
                 $_SESSION['prenom'] = $result['prenom'];
-                echo "Connexion en cours";
+
                 header("location: ../Vues/v_dashboard.php");
                 exit();
             } else {
