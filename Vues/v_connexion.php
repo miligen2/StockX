@@ -8,7 +8,7 @@
                 <input type="password" name="password" id=""placeholder="Mot de passe">
             </div>
             <input type="submit" class="btn" value="Se Connecter">
+            <p> <a href="./Vues/v_register.php"> créer un compte </a></p>
         </form>
     </div>
-
 </div>

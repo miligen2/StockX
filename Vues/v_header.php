@@ -1,10 +1,11 @@
 <?php
+session_start();
 
 
 if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
     $messageBienvenue = "<span>Bonjour, " . $_SESSION["prenom"] . " " . $_SESSION["nom"] . "</span>";
 } else {
-    $messageBienvenue = "<span>Bienvenue</span>"; 
+    $messageBienvenue = "<span>Bienvenue</span>";
 }
 ?>
 

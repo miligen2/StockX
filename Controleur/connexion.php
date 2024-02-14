@@ -1,5 +1,5 @@
 <?php
-session_start(); // Démarrer la session
+session_start();
 
 include '../API/database.php';
 global $db;
@@ -9,13 +9,14 @@ try {
         $email = htmlspecialchars($_POST['email']);
         $password = $_POST['password'];
 
-        $sql = "SELECT email, mot_de_passe FROM utilisateurs WHERE email = :email AND mot_de_passe = :password";
+        $sql = "SELECT email, mot_de_passe FROM utilisateurs WHERE email = :email";
         $stmt = $db->prepare($sql);
-        $stmt->execute(['email' => $email, 'password' => $password]);
+        $stmt->execute(['email' => $email]);
         $result = $stmt->fetch();
 
         if ($result) {
-            if ($password == $result['mot_de_passe']) {
+            if (password_verify($password,$result['mot_de_passe'])) {
+                
                 $_SESSION['user-id'] = $result["id_utilisateur"];
                 $_SESSION['user_email'] = $result['email'];
                 $_SESSION['nom'] = $result['nom'];
