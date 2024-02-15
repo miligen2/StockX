@@ -1,4 +1,4 @@
-header{
+.h_dashoard{
     position: fixed;
     width: 300px;
 
@@ -35,8 +35,4 @@ header{
 
 nav{
     height: 100vh;
-}
-body  {
-    margin: 0;
-    padding: 0;
 }
