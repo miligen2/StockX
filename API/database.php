@@ -25,7 +25,7 @@ class Database
     }
 
 
-    public function  query($sql){
+    public function query($sql){
         return $this->statement = $this->handler->prepare($sql);
     }
 
@@ -74,16 +74,13 @@ class Database
         $reslignes = $res->fetchAll(PDO::FETCH_OBJ);
         return $reslignes;
     }
-    public function getLesStocks(){
-        $req = "SELECT nom, description, quantite_disponible, type FROM stocks ORDER BY nom";
-        $res = $this->handler->query($req);
-        $reslignes = $res->fetchAll(PDO::FETCH_OBJ);
-        return $reslignes;
-    }
 
     public function getDetailCommande(){
         $req = "SELECT s.nom, dc.quantite AS quantite_dc, c.date_commande FROM details_commande dc INNER JOIN commandes c ON c.id_commande = dc.id_commande INNER JOIN stocks s ON s.id_stock = dc.id_stock;";
     }
+
+
+
 
 }
 

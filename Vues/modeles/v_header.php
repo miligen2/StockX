@@ -42,7 +42,7 @@ if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
             <ul>
                 <div class="itemList">
                     <img src="../images/IconeinSite/se-deconnecter.png" alt="">
-                    <li>Déconnexion</li>
+                    <a href="../Controleur/logout.php"><li>Déconnexion</li></a>
                 </div>
             </ul>
         </div>
