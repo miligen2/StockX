@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet du laboratoire Galaxy-Swiss Bourdin</title>
 </head>
-<body><?php  
+<body>
+<?php
 session_start();
 include "Vues/v_connexion.php";
 include "Vues/v_pied.php"

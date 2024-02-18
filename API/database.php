@@ -71,8 +71,7 @@ class Database
     public function getLesStocksId(){
         $req = "SELECT id_stock FROM stocks ORDER BY id_stock";
         $res = $this->handler->query($req);
-        $reslignes = $res->fetchAll(PDO::FETCH_OBJ);
-        return $reslignes;
+        return $res->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function getDetailCommande(){

@@ -12,9 +12,7 @@ $stocks = $stockAcces->getLesStocks();
 
 ?>
 <main>
-    <?php include 'modeles/v_titrePage.php'; ?>
-
-
+    <div class="t_space"><h1>Stock </h1></div>
     <div class="container">
         <header>
             <div class="filtre">
@@ -24,19 +22,46 @@ $stocks = $stockAcces->getLesStocks();
             </div>
         </header>
         <div class="contenue">
+            <div class="tableau">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Quantité</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracétamol</td>
+                        <td>Médicament pour soulager la douleur et la fièvre</td>
+                        <td>10 médicaments</td>
+                        <td>
+                            <button>Supprimer</button>
+                            <button>Modifier</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+            
+            <br><br><br><br><br>
+            
+
+
+
+
+
+
+
+
+
         <?php
     foreach($stocks as $stock){
-            echo '<div class="row" name="'. $stock->id_stock .'">' . $stock->nom . ' ' . $stock->description . ' ' . $stock->quantite_disponible . ' ' . $stock->type . '</div>';   
+            echo '<div class="row">' . $stock->nom . ' ' . $stock->description . ' ' . $stock->quantite_disponible . ' ' . $stock->type . '<a href="./v_stockDelete.php?id_stock='. $stock->id_stock . '">Supprimer</a> <a href="./v_stockUpdate.php?id_stock='. $stock->id_stock . '">Modifier</a></div>';   
     } ?>
-
-    
-    <dialog id="supprimer">
-        <h2>Supprimer cet objet</h2>
-        <p>êtes vous sur de vouloir supprimer ? </p>
-
-
-    </dialog>
-
 
 <?php
  if($_SESSION['role'] == 1)
@@ -49,20 +74,20 @@ $stocks = $stockAcces->getLesStocks();
         <h2>Ajouter des stocks</h2>
         <form action="" method="POST">
             <label>Nom</label>
-            <input type="text" name="nom" id="">
+            <input type="text" name="nom">
             <label>desc</label>
             <input type="text" name="description">
             <label>quantite</label>
-            <input type="text" name="quantite" id="">
+            <input type="number" name="quantite">
             <label>type</label>
             <select name="type">
                 <option value="medicament">Médicament</option>
                 <option value="materiel">Matériel</option>
             </select>
-            <input type="submit" class="btn" value="Ajouter" >
+            <input type="submit" class="btn" name="ajouter" value="Ajouter" >
 
             <?php
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['ajouter']) {
                     $nom = $_POST['nom'];
                     $description = $_POST['description'];
                     $qt_disp = $_POST['quantite'];
@@ -75,6 +100,7 @@ $stocks = $stockAcces->getLesStocks();
             ?>
             
         </form>
+        <button id="btnFermerAjouter">fermer</button>
     </dialog>
  
 
@@ -84,23 +110,17 @@ $stocks = $stockAcces->getLesStocks();
 
 
     <script>
-    const boiteDeDialogue2 = document.querySelector('#ajouter');
-    const ouvrirBouton = document.querySelector('.ouvrirBoiteDeDialogue');
-    const ouvrirBouton2 = document.getElementById('btnajo');
+    const DialogueAjouter = document.querySelector('#ajouter');
+    const ouvrirDialogueAjouter = document.getElementById('btnajo');
+    const fermerBoutonDialogueAjouter = document.getElementById('btnFermerAjouter');
 
-
-    ouvrirBouton2.addEventListener('click', () => {
-    boiteDeDialogue2.showModal();
-  });
-
-    ouvrirBouton.addEventListener('click', () => {
-    boiteDeDialogue.showModal();
+    ouvrirDialogueAjouter.addEventListener('click', () => {
+    DialogueAjouter.showModal();
   });
  
-  fermerBouton.addEventListener('click', () => {
-    boiteDeDialogue.close();
+  fermerBoutonDialogueAjouter.addEventListener('click', () => {
+    DialogueAjouter.close();
   });
-
 
     </script>
     

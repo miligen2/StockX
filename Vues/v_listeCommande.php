@@ -5,7 +5,8 @@ include 'modeles/v_entete.php';
 include 'modeles/v_header.php';
 ?>
 <main>
-    <?php include 'modeles/v_titrePage.php'; ?>
+<div class="t_space"><h1>Liste Commande </h1></div>
+   
     <?php $stocks = $db->getLesStocksId();
     foreach($stocks as $stock){
         echo $stock->id_stock;
