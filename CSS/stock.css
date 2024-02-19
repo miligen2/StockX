@@ -1,32 +1,140 @@
-.contenue {
+.container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
-.row{
-    display: flex;
+.contenue{
+    width: 80%;
 }
 
+.header-search{
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.form-control {
+    display: block;
+    width: 200px;
+    padding: 0.47rem 0.75rem;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(45, 45, 73, 0.75);
+
+    background-color: #f8f9fa;
+    border: 1px solid #eff0f2;
+    border-radius: 30px;
+}
+.tableau{
+    padding-top: 10px;
+}
 
 table{
     border-collapse: collapse ;
     width: 100%;    
 }
 
-th, td {
-    border: 1px solid #dddddd;
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+th {
+    color: black;
+    border-bottom-width: 1px;
+    border-color: #F8F7FC;
+    text-align: center;
+    padding: 8px;
+}
+
+
+ td {
+    border-bottom-width: 1px;
+    border-color: #F8F7FC;
+    color :#626276;
+
     text-align: center;
     padding: 8px;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #F8F7FC;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr:hover {
-    background-color: #ddd;
+.effet-carte {
+    background-color: #ffffff; /* Couleur de fond de la carte */
+    border-radius: 8px; /* Rayon de la bordure pour arrondir les coins */
+    box-shadow: 0 2px 3px rgba(36,36,60,.06);
+    padding: 20px; /* Espace intérieur de la carte */
+}
+
+
+
+/* Style de base pour le dialogue */
+#ajouter {
+    width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border:none;
+    box-shadow: var(--box-shadow);
+}
+
+/* Style pour le titre */
+#ajouter h2 {
+    margin: 10px 0; 
+}
+
+/* Style pour les étiquettes */
+#ajouter label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Style pour les champs de saisie et les boutons */
+#ajouter input[type="text"],
+#ajouter input[type="number"],
+#ajouter select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: var(    --border-color) solid var(--border-width);
+    border-radius: 4px;
+    box-sizing: border-box; /* Pour inclure les bordures et les remplissages dans la largeur totale */
+}
+
+
+
+
+#btnFermerAjouter {
+    color: var(--Titre);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+
+#ajouter select {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#ajouter select:hover {
+    border-color: #007bff; /* Couleur de la bordure au survol */
+}
+
+#ajouter select:focus {
+    outline: none; /* Supprimer le contour lorsqu'il est en focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Ajouter une bordure sur le focus */
 }
