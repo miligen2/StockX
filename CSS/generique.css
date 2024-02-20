@@ -20,7 +20,7 @@
     --btn-hover-border-color: #57a282;
     --btn-active-bg: #57a282;
 
-    --red: #e1665d;
+    --red: #ff9999;
     --orange: #f1734f;
     --yellow: #f7cc53;
     --black: #000;
@@ -128,12 +128,8 @@ h1,h2,h3,h4,h5,h6 {
 
 a{
     text-decoration: none;
-    color: var(--link-color);
-    font-weight: 700;
 }
-a:hover{
-    color:var(--link-hover-color)
-}
+
 p {
     margin: 8px 0;
 }
@@ -154,8 +150,18 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
     border: var(--border-color) solid var(--border-width);
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 0.9rem;
 }
 
+.t_space{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 3px rgba(36,36,60,.06);
+    margin-bottom: 20px;
+}
 /* Bouton */
 
 

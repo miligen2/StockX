@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stockAcces->updateStock($id,$nom,$description,$qt,$type);
 
 
-    header("location: ./v_stock.php");
+    header("location: ./v_stock.php?titre=Stock");
 }
 include 'modeles/v_entete.php';
 include 'modeles/v_header.php';

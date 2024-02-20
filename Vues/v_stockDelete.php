@@ -11,7 +11,7 @@ if (isset($_GET["id_stock"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stockAcces->deleteStock($id);
 
-    header("location: ./v_stock.php");
+    header("location: ./v_stock.php?titre=stock");
 }
 
 ?>

@@ -111,7 +111,8 @@ $stocks = $stockAcces->getLesStocks();
                     $type = $_POST['type'];
                     $stockAcces->createStock($nom, $description, $qt_disp, $type);
                     sleep(1);
-                    header("Location: ".$_SERVER['PHP_SELF']);
+                    header("Location: " . $_SERVER['PHP_SELF'] . "?titre=stock");
+                    exit(); 
                 }
          
 

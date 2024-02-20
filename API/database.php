@@ -64,6 +64,11 @@ class Database
         return $this->statement->rowCount();
     }
 
+    public function fetchColumn(){
+        $this->execute();
+        return $this->statement->fetchColumn();
+    }
+
  
 
 
