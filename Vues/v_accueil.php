@@ -6,12 +6,13 @@ include '../Controleur/dashboard.php';
 
 $dashboardAcces = new Dashboard();
 $stocknumber = $dashboardAcces->getTotalstocks();
+$stockCritical = $dashboardAcces->get3criticalsSTocks();
 
 include "modeles/v_entete.php";
 include "modeles/v_header.php";
 ?>
 <main>
-    <div class="t_space"><h1>Dashboard </h1></div>
+    <?php include "modeles/v_titrePage.php" ?>
     <div class="Dcontainer">
         <div class="row">
             <div class="Dcard">
@@ -27,20 +28,18 @@ include "modeles/v_header.php";
                     </div>
                     <div class="Dright">
                         <h4>Refaire le Stock:</h4>
+                        
+                        <?php 
+                        if ($stockCritical){
+                        foreach ($stockCritical as $critical) { ?>
                         <div class="product-row">
-                            <div class="product-name">Gant latex</div>
-                            <div class="product-quantity">12</div>
+                            <div class="product-name"><?php echo $critical->nom; ?></div>
+                            <div class="product-quantity"><?php echo $critical->quantite_disponible; ?></div>
                         </div>
-                        <div class="product-row">
-                            <div class="product-name">Pomme de reinette</div>
-                            <div class="product-quantity">5</div>
-                        </div>
-                        <div class="product-row">
-                            <div class="product-name">Test</div>
-                            <div class="product-quantity">35</div>
-                        </div>
+                        <?php }} else {echo ' <h2>Vous êtes à jour</h2>';} ?>
                     </div>  
                 </div>
+                <!-- dernier mouvement -->
                 <table>
                     <thead>
                         <th>nom du produit</th>

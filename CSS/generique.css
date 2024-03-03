@@ -8,6 +8,7 @@
     --Titre: rgba(45, 45, 73, 0.75);
     --text-Titre-secondaire:#959396;
     --text-primaire:#2d2d49;
+    --header-dark-bg: radial-gradient(at 50% -20%, #3f1e59, #311748) fixed;
 
 
 
@@ -153,14 +154,17 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
     font-size: 0.9rem;
 }
 
-.t_space{
+.navabar-header{
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 90px;
     padding-left: 20px;
-    background: #ffffff;
+    background: var(--header-dark-bg);
     box-shadow: 0 2px 3px rgba(36,36,60,.06);
     margin-bottom: 20px;
+}
+.navabar-header * {
+    color:var(--white)
 }
 /* Bouton */
 

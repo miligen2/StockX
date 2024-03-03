@@ -54,3 +54,22 @@
 .Dright .product-row .product-name {
     flex: 1;
 }
+
+
+
+.error-message {
+    background-color: #ffe6e6;
+    color: #ff0000;
+    border: 1px solid #ff9999;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.success-message {
+    background-color: #e6ffe6;
+    color: #008000;
+    border: 1px solid #66cc66;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

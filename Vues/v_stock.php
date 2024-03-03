@@ -11,7 +11,7 @@ $stocks = $stockAcces->getLesStocks();
 
 ?>
 <main>
-    <div class="t_space"><h1>Stock </h1></div>
+<?php include "modeles/v_titrePage.php" ?>
     <div class="container">
         <header>
             <!-- <div class="filtre">

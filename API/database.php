@@ -68,6 +68,9 @@ class Database
         $this->execute();
         return $this->statement->fetchColumn();
     }
+    public function lastInsertId() {
+        return $this->handler->lastInsertId();
+    }
 
  
 
