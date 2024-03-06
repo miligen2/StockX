@@ -27,6 +27,7 @@ class Stock{
     public function createStock($nom, $description, $qt_disp, $type) {
         global $db;
         try{
+        $error = false;
         $req = "INSERT INTO stocks (nom, description, quantite_disponible, type) VALUES (:nom, :description, :qt_disp, :type);";
         $db->query($req);
         $db->bind(':nom', $nom);
@@ -36,7 +37,9 @@ class Stock{
         $db->execute();
         }catch (Exception $e) {
             echo $e->getMessage();
+            $error = true;
         }
+        return $error;
         
     }
     public function updateStock($id, $nom, $description, $qt_disp, $type) {

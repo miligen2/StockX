@@ -43,6 +43,23 @@ $db = new Database();
 
     }
     
+    public function getHistoriqueCommandes() {
+        global $db;
+    
+        // Requête SQL pour récupérer l'historique des commandes avec les détails
+        $req = "SELECT c.id_commande, c.date_commande, c.statut, dc.id_stock, dc.quantite, s.nom AS nom_stock
+                FROM commandes c
+                INNER JOIN details_commande dc ON c.id_commande = dc.id_commande
+                INNER JOIN stocks s ON dc.id_stock = s.id_stock
+                ORDER BY c.date_commande DESC";
+    
+        // Exécutez la requête
+        $db->query($req);
+    
+        // Retournez les résultats de la requête
+        return $db->resultSet();
+    }
+    
     
 
  }
