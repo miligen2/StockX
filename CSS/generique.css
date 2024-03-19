@@ -55,7 +55,12 @@
 
     --bs-info: #5fd0f3;
     --bs-warning: #f7cc53;
+
     --bs-danger: #e1665d;
+    --bs-danger-hover: #d4554c;
+    --bs-danger-border-color: #bb4c44;
+    
+
     --bs-light: #f8f7fc;
     --bs-dark: #24243c;
     --bs-purple: #3966d7;
@@ -174,8 +179,6 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
     font-size: 0.9rem;
     color: white ;
     border: 0px;
-
-
 }
 .btn-success{
     background-color: var(--success);
@@ -190,6 +193,22 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
 .btn-success:active{
     background-color: var(--btn-active-bg);
 }
+
+.btn-denied{
+    background-color: var(--bs-danger);
+    border-radius: 30px;
+    transition: background-color 300ms ease-out;
+}
+.btn-denied:hover{
+    background-color: var(--bs-danger-hover);
+    border-color: var(--bs-danger-border-color);
+    cursor:pointer
+}
+.btn-denied:active{
+    background-color: var(--bs-danger-border-color);
+}
+
+
 
 .btn-primary{
     background-color: var(--blue);
@@ -206,4 +225,8 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
 
 .row{
     display: flex;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
 }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include '../API/database.php';
 include '../Controleur/dashboard.php';
 

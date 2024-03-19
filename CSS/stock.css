@@ -88,11 +88,6 @@ tr:nth-child(even) {
     margin: 10px 0; 
 }
 
-/* Style pour les étiquettes */
-#ajouter label {
-    display: block;
-    margin-bottom: 8px;
-}
 
 /* Style pour les champs de saisie et les boutons */
 #ajouter input[type="text"],

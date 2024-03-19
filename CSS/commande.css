@@ -1,11 +1,11 @@
 .invalidee {
-    background-color: red !important;
+    background-color: var(--bs-danger) !important;
 }
 
 .en-attente {
     background-color: yellow !important;
 }
 
-.accepte {
+.validee {
     background-color: lightgreen !important;
 }

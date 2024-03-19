@@ -21,6 +21,7 @@ include 'modeles/v_header.php';
 
 <div class="container">
     <div class="contenue effet-carte">
+    <h2>Création d'une commande</h2>
         <form action="" method="POST">
             <label>Commandé par :</label>
             <input type="text" name="commandepar" value="<?php echo htmlspecialchars($_SESSION["prenom"] . " " . $_SESSION["nom"]); ?>" readonly>
