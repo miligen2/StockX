@@ -16,7 +16,7 @@ include 'modeles/v_header.php';
     <?php include "modeles/v_titrePage.php" ?>
     <div class="container">
         <div class="contenue effet-carte">
-            <h2>Historique des commandes</h2>
+            <h2>Historique des commandes</h2><br><br>
             <table>
                 <thead>
                     <tr>

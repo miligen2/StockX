@@ -26,7 +26,23 @@ if ($getCommande)
 
 $nomPrenomCommanderPar = $commandAcces->getNomById($commande_par);
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['maj']) {  
+    // recuperation status de la commande
+    $majStatut = $_POST['statut'];
 
+    // recuperation de l'id de l'item
+    $idStock= $commandAcces->translateNomInId($nom_stock);
+
+    //maj du statut
+    $commandAcces->updateStatut($majStatut,$id_commande);
+
+    if ($majStatut == "validee")
+    {
+        $commandAcces->updateStockIncrease($quantite,$idStock);
+        header("location: v_listeCommande.php?titre=Historique");
+    }
+    header("location: v_listeCommande.php?titre=Historique");
+}
 
 include 'modeles/v_entete.php';
 include 'modeles/v_header.php';
@@ -63,23 +79,4 @@ include 'modeles/v_header.php';
 
 <?php
 include 'modeles/v_pied.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['maj']) {  
-    // recuperation status de la commande
-    $majStatut = $_POST['statut'];
-
-    // recuperation de l'id de l'item
-    $idStock= $commandAcces->translateNomInId($nom_stock);
-
-    //maj du statut
-    $commandAcces->updateStatut($majStatut,$id_commande);
-
-    if ($majStatut == "validee")
-    {
-        $commandAcces->updateStockIncrease($quantite,$idStock);
-    }
-
-}
-
-
 ?>

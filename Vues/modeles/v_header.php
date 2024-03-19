@@ -10,8 +10,6 @@ if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
     $messageBienvenue = "<span>Bienvenue</span>";
 }
 ?>
-
-
 <header class="h_dashoard">
     <nav>
         <div class="img">
@@ -63,8 +61,6 @@ if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
                         </a>
                     </li>
                 </div>
-
-
             </ul>
             <ul>
                 <li class=titreHeader>DÉCONNEXION </li>
@@ -78,6 +74,5 @@ if (isset($_SESSION["prenom"]) && isset($_SESSION["nom"])) {
                 </div>
             </ul>
         </div>
-
     </nav>
 </header>

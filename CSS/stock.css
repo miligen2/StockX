@@ -133,3 +133,36 @@ tr:nth-child(even) {
     outline: none; /* Supprimer le contour lorsqu'il est en focus */
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Ajouter une bordure sur le focus */
 }
+
+
+.article-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .article-description {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .article-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-details p {
+    margin: 0;
+  }
+  
+  .quantite {
+    font-weight: bold;
+    color: #0066ff;
+  }
+  
+  .type {
+    font-style: italic;
+    color: #ff9900;
+  }
