@@ -31,7 +31,7 @@ class Commande{
         global $db;
         $datecommande = date("Y-m-d H:i:s");
     
-        $req = "INSERT INTO commandes (id_utilisateur, date_commande, statut) VALUES (:id_user, :datecommande, 'en_attente')";
+        $req = "INSERT INTO commandes (id_utilisateur, date_commande, statut, entree_sortie) VALUES (:id_user, :datecommande, 'en_attente','entree')";
         $db->query($req);
         $db->bind(':id_user', $id_user);
         $db->bind(':datecommande', $datecommande);
@@ -80,7 +80,21 @@ class Commande{
                 FROM commandes c
                 INNER JOIN details_commande dc ON c.id_commande = dc.id_commande
                 INNER JOIN stocks s ON dc.id_stock = s.id_stock
-                ORDER BY c.date_commande DESC";
+                WHERE entree_sortie = 'entree'
+                ORDER BY c.date_commande DESC
+                ";
+        $db->query($req);
+        return $db->resultSet();
+    }
+    public function getHistoriqueCommandesSortie() {
+        global $db;
+        $req = "SELECT c.id_commande, c.date_commande, c.statut, dc.id_stock, dc.quantite, s.nom AS nom_stock
+                FROM commandes c
+                INNER JOIN details_commande dc ON c.id_commande = dc.id_commande
+                INNER JOIN stocks s ON dc.id_stock = s.id_stock
+                WHERE entree_sortie = 'sortie'
+                ORDER BY c.date_commande DESC
+                ";
         $db->query($req);
         return $db->resultSet();
     }

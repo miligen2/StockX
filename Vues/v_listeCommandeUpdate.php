@@ -51,7 +51,7 @@ include 'modeles/v_header.php';
     <?php include "modeles/v_titrePage.php" ?>
     <div class="container">
         <div class="contenue effet-carte">
-            <h2>Mise à jour de la commande numero <?php echo $id_commande; ?></h2>
+            <h2>Mise à jour de la commande numero <?php echo $id_commande; ?></h2> <br><br>
             <form action="" method="post">
                 <label>N° Commande</label>
                 <input type="text" name="id_commande" value="<?php echo $id_commande; ?>" readonly>

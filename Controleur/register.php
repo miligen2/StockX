@@ -19,6 +19,10 @@ try {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
                 $q = $db->query("INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe, id_role) VALUES (:nom, :prenom, :email, :password, 2);");
                 $q->execute(["nom" => $nom, "prenom" => $prenom, "email" => $email, "password" => $hashedPassword]);
+                
+                header("location: ../index.php");
+                exit();
+
             } else {
                 echo "Un compte avec cet email existe déjà.";
             }

@@ -1,11 +1,14 @@
-.invalidee {
+.invalidee, .invalidée {
     background-color: var(--bs-danger) !important;
+    font-weight: bold;
 }
 
-.en-attente {
-    background-color: yellow !important;
+.en-attente, .en_attente {
+    background-color: #F0E68C !important;
+    font-weight: bold;
 }
 
 .validee {
-    background-color: lightgreen !important;
+    background-color: #32CD32 !important;
+    font-weight: bold;
 }

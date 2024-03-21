@@ -5,7 +5,7 @@
     --font-family: "Inter", sans-serif;
     --body-bg: #f9f6fa;
 
-    --Titre: rgba(45, 45, 73, 0.75);
+    --Titre: #2d2d49bf;
     --text-Titre-secondaire:#959396;
     --text-primaire:#2d2d49;
     --header-dark-bg: radial-gradient(at 50% -20%, #3f1e59, #311748) fixed;
@@ -15,6 +15,11 @@
     --blue: #776acf;
     --btn-primary-hover-bg: #655ab0;
     --btn-primary-active-bg: #5f55a6;
+
+
+    --dash1: #d0d4f5;
+    --dash2: #f1f2fc;
+    --dash3: #e5e8fa;
 
     --success: #6dcba3;
     --btn-hover-bg: #5dad8b;
@@ -158,6 +163,9 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
     box-sizing: border-box;
     font-size: 0.9rem;
 }
+.center {
+    justify-content: center;
+}
 
 .navabar-header{
     display: flex;
@@ -206,6 +214,9 @@ input[type=email],input[type=text],input[type=password],input[type=number],selec
 }
 .btn-denied:active{
     background-color: var(--bs-danger-border-color);
+}
+.spacebtw{
+    justify-content: space-between;
 }
 
 
