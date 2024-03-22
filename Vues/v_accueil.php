@@ -77,6 +77,7 @@ include "modeles/v_header.php";
                                 <div class="Dcommande-detail">
                                     <span class="Dcommande-nom"><?php echo $l->nom; ?></span>
                                     <span class="Dcommande-quantite"><?php echo $l->quantite; ?></span>
+                                    <span class="Dcommande-quantite <?php echo $l->entree_sortie; ?>" style="padding-left:5px;"><?php echo $l->entree_sortie; ?></span>
                                 </div>
                             </div>
                         </div>

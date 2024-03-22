@@ -43,7 +43,7 @@ include 'modeles/v_header.php';
                                 <?php echo htmlspecialchars($command->statut); ?>
                             </td>
                             <td><?php echo htmlspecialchars($command->nom_stock); ?></td>
-                            <td><?php echo htmlspecialchars($command->quantite); ?></td>
+                            <td>-<?php echo htmlspecialchars($command->quantite); ?></td>
 
                             <td>
                                 <?php if ($command->statut != 'validee') : ?>

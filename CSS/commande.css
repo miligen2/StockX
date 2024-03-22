@@ -12,3 +12,9 @@
     background-color: #32CD32 !important;
     font-weight: bold;
 }
+.sortie{
+    color: var(--bs-danger) !important ;
+}
+.entree{
+    color:#32CD32;
+}

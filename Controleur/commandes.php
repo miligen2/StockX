@@ -38,9 +38,8 @@ class Commande{
         $db->execute();
     
         return $db->lastInsertId();
-    
-
     }
+    
     public function creatCommande2($lastId,$quantite,$id_stock){   
         global $db;
         try{
@@ -59,6 +58,35 @@ class Commande{
         return $error;
 
     }
+
+    public function creatCommandeSortie($id_user) {
+        global $db;
+        $datecommande = date("Y-m-d H:i:s");
+    
+        $req = "INSERT INTO commandes (id_utilisateur, date_commande, statut, entree_sortie) VALUES (:id_user, :datecommande, 'validee','sortie')";
+        $db->query($req);
+        $db->bind(':id_user', $id_user);
+        $db->bind(':datecommande', $datecommande);
+        $db->execute();
+    
+        return $db->lastInsertId();
+    }
+
+    public function creatCommandeSortie2($id_commande, $id_stock, $quantite) {
+        global $db;
+        try {
+            $req = "INSERT INTO details_commande (id_commande, id_stock, quantite) VALUES (:id_commande, :id_stock, :quantite);";
+            $db->query($req);
+            $db->bind(':id_commande', $id_commande);
+            $db->bind(':id_stock', $id_stock);
+            $db->bind(':quantite', $quantite);
+            $db->execute();
+            return false; 
+        } catch (PDOException $e) {
+            return $e->getMessage(); 
+        }
+    }
+
     public function updateStatut($statut,$id_commande)
     {
         try {

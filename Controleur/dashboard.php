@@ -27,7 +27,7 @@ class Dashboard{
     }
     public function get3DernieresCommandes(){
         global $db;
-        $req = "SELECT c.id_commande, c.date_commande, c.statut, dc.quantite, s.nom 
+        $req = "SELECT c.id_commande, c.date_commande, c.statut, c.entree_sortie, dc.quantite, s.nom 
             FROM commandes c 
             INNER JOIN details_commande dc ON c.id_commande = dc.id_commande 
             INNER JOIN stocks s ON dc.id_stock = s.id_stock  

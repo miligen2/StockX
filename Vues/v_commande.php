@@ -45,6 +45,8 @@ include 'modeles/v_header.php';
                     $id_commande = $commandAcces->creatCommande($id_user);
                     $error = $commandAcces->creatCommande2($id_commande,$quantite,$id_stock);
 
+                    var_dump($id_commande,$id_stock,$quantite);
+
                     
 
 

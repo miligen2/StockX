@@ -25,6 +25,7 @@ class Database
     }
 
 
+
     public function query($sql){
         return $this->statement = $this->handler->prepare($sql);
     }
